@@ -26,7 +26,7 @@ class WeatherViewModel: NSObject {
     
     func getWeatherData() {
         IHProgressHUD.show()
-        self.apiService?.apiToGetWeatherForecastData { result in
+        self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { result in
             self.weatherData = result
         }
     }

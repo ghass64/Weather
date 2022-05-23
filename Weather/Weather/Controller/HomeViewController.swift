@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
     //MARK: - Helper methods
     func configureView() {
         self.title = Constants.city
+        let settingBtn: UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(self.settingButtonClicked))
+        settingBtn.tintColor = UIColor.systemBackground
+        self.navigationItem.rightBarButtonItems = [settingBtn]
 
         //add pull to refresh mechanism to the table
         addPullToRefresh()
@@ -85,6 +88,25 @@ class HomeViewController: UIViewController {
         IHProgressHUD.dismiss()
         self.tableView.refreshControl?.endRefreshing()
     }
+    
+    //MARK: - Action
+    @objc func settingButtonClicked() {
+        let alert = UIAlertController(title: "Select Unit", message: "", preferredStyle: .actionSheet)
+        let centigrade = UIAlertAction(title: "Centigrade", style: .default) { [weak self] _ in
+            SettingManager.shared.setMeasurment(measurment: "M")
+            self?.updateUIFromViewModel()
+        }
+        let fahrenheit = UIAlertAction(title: "Fahrenheit", style: .default) { [weak self] _ in
+            SettingManager.shared.setMeasurment(measurment: "I")
+            self?.updateUIFromViewModel()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(centigrade)
+        alert.addAction(fahrenheit)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 //MARK: - UITableViewDelegate

@@ -11,7 +11,10 @@ class APIService: NSObject {
 
     private let sourceURL = URL(string: Constants.APIURL)!
     
-    func apiToGetWeatherForecastData(completion: @escaping (Weather) -> ()) {
+    func apiToGetWeatherForecastData(unit: String, completion: @escaping (Weather) -> ()) {
+        let apiString = String(format: "%@?city=%@&country=%@&days=%@&units=%@&key=%@",Constants.APIURL,Constants.city,Constants.countryCode,Constants.days,unit,Constants.apiKey)
+        let sourceURL = URL(string: apiString)!
+
         URLSession.shared.dataTask(with: sourceURL) { Data, response, error in
             if let data = Data {
                 let jsonDecoder = JSONDecoder()

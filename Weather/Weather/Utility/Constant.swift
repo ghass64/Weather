@@ -6,9 +6,13 @@
 //
 
 enum Constants {
+    
+    static let wSettingKeyMeasurment = "wSettingKeyMeasurment"
+
+    
     static let city = "Hannover"
     static let countryCode = "DE"
     static let apiKey = "9686aff607434c4f9c4aeb861bf68765"
     static let days = "16"
-    static let APIURL = String(format: "https://api.weatherbit.io/v2.0/forecast/daily?city=%@&country=%@&days=%@&key=%@",Constants.city,Constants.countryCode,Constants.days,Constants.apiKey)
+    static let APIURL = "https://api.weatherbit.io/v2.0/forecast/daily"
 }

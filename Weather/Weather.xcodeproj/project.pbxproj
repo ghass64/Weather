@@ -25,6 +25,7 @@
 		3F81A93C283C0AAC007F3812 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93B283C0AAC007F3812 /* AttributedString.swift */; };
 		3F81A93E283C1163007F3812 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93D283C1163007F3812 /* WeatherViewModel.swift */; };
 		3F81A940283C130D007F3812 /* WeatherTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93F283C130D007F3812 /* WeatherTableViewDataSource.swift */; };
+		3F81A942283C3149007F3812 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A941283C3149007F3812 /* SettingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		3F81A93B283C0AAC007F3812 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
 		3F81A93D283C1163007F3812 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		3F81A93F283C130D007F3812 /* WeatherTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewDataSource.swift; sourceTree = "<group>"; };
+		3F81A941283C3149007F3812 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				3F81A935283BCC3B007F3812 /* Constant.swift */,
 				3F81A93B283C0AAC007F3812 /* AttributedString.swift */,
+				3F81A941283C3149007F3812 /* SettingManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				3F81A8F8283BB4A8007F3812 /* HomeViewController.swift in Sources */,
 				3F81A93E283C1163007F3812 /* WeatherViewModel.swift in Sources */,
 				3F81A8F4283BB4A8007F3812 /* AppDelegate.swift in Sources */,
+				3F81A942283C3149007F3812 /* SettingManager.swift in Sources */,
 				3F81A8F6283BB4A8007F3812 /* SceneDelegate.swift in Sources */,
 				3F81A93A283C0A3E007F3812 /* String.swift in Sources */,
 				3F81A936283BCC3B007F3812 /* Constant.swift in Sources */,
