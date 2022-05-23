@@ -23,6 +23,8 @@
 		3F81A938283C05E8007F3812 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A937283C05E8007F3812 /* WeatherTableViewCell.swift */; };
 		3F81A93A283C0A3E007F3812 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A939283C0A3E007F3812 /* String.swift */; };
 		3F81A93C283C0AAC007F3812 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93B283C0AAC007F3812 /* AttributedString.swift */; };
+		3F81A93E283C1163007F3812 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93D283C1163007F3812 /* WeatherViewModel.swift */; };
+		3F81A940283C130D007F3812 /* WeatherTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A93F283C130D007F3812 /* WeatherTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		3F81A937283C05E8007F3812 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		3F81A939283C0A3E007F3812 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3F81A93B283C0AAC007F3812 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
+		3F81A93D283C1163007F3812 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		3F81A93F283C130D007F3812 /* WeatherTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 		3F81A92F283BC1C4007F3812 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F81A93D283C1163007F3812 /* WeatherViewModel.swift */,
+				3F81A93F283C130D007F3812 /* WeatherTableViewDataSource.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -374,9 +380,11 @@
 			files = (
 				3F81A93C283C0AAC007F3812 /* AttributedString.swift in Sources */,
 				3F81A932283BC86B007F3812 /* Weather.swift in Sources */,
+				3F81A940283C130D007F3812 /* WeatherTableViewDataSource.swift in Sources */,
 				3F81A934283BCABF007F3812 /* APIService.swift in Sources */,
 				3F81A938283C05E8007F3812 /* WeatherTableViewCell.swift in Sources */,
 				3F81A8F8283BB4A8007F3812 /* HomeViewController.swift in Sources */,
+				3F81A93E283C1163007F3812 /* WeatherViewModel.swift in Sources */,
 				3F81A8F4283BB4A8007F3812 /* AppDelegate.swift in Sources */,
 				3F81A8F6283BB4A8007F3812 /* SceneDelegate.swift in Sources */,
 				3F81A93A283C0A3E007F3812 /* String.swift in Sources */,
