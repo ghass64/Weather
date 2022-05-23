@@ -13,7 +13,7 @@ class AttributedString : NSObject {
         
         let temprature = String(format: "%@° | %@°", max, min)
 
-        let maxRange = (max as NSString).range(of: temprature)
+        let maxRange = (temprature as NSString).range(of: max)
         
         let attributedString = NSMutableAttributedString.init(string:temprature)
         if let font = UIFont(name: "AvenirNextCondensed-Bold", size: 20) {

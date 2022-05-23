@@ -9,13 +9,13 @@ import UIKit
 import IHProgressHUD
 
 class HomeViewController: UIViewController {
-
+    
     //MARK: -IBOUTLET
     @IBOutlet weak var tableView: UITableView!
-
+    
     //MARK: - ViewModel
     private var weatherViewModel: WeatherViewModel!
-
+    
     //MARK: - DataSource
     private var dataSource: WeatherTableViewDataSource<WeatherTableViewCell,WeatherForecast>!
     
@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = Constants.city
         updateUIFromViewModel()
     }
     
@@ -35,12 +36,11 @@ class HomeViewController: UIViewController {
             self.updateDataSource()
         }
     }
-
+    
     func updateDataSource() {
         self.dataSource = WeatherTableViewDataSource(cellIdentifier: "WeatherTableViewCell", data: self.weatherViewModel.weatherData.forecast, configureCell: { (cell, weather) in
-            cell.dayLabel.text = weather.datetime.dayOfWeek()
-            cell.tempratureLabel.attributedText = AttributedString.tempratureString(min: String(weather.maxTemp), max: String(weather.minTemp))
-            cell.weatherImage.image = UIImage(named: String(weather.weather.code))
+            // configure cell UI element
+            cell.setDateInCell(weather: weather)
         })
         
         DispatchQueue.main.async {
