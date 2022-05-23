@@ -23,5 +23,22 @@ class AttributedString : NSObject {
          return attributedString
     }
     
+    class func dateLiteString(fullDate: String) -> NSAttributedString {
+        
+        let dateArr = fullDate.components(separatedBy: "\n")
+        var dateString = ""
+        if dateArr.count > 0 {
+            dateString = dateArr[1]
+        }
+
+        let range = (fullDate as NSString).range(of: dateString)
+        
+        let attributedString = NSMutableAttributedString.init(string:fullDate)
+        if let font = UIFont(name: "AvenirNextCondensed-UltraLight", size: 10) {
+            attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+        }
+         return attributedString
+    }
+    
 }
 

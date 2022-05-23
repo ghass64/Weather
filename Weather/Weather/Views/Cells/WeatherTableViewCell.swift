@@ -24,7 +24,7 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func setDateInCell(weather: WeatherForecast) {
-        self.dayLabel.text = weather.datetime.dayOfWeek()
+        self.dayLabel.attributedText =  AttributedString.dateLiteString(fullDate:String(format:"%@\n%@",weather.datetime.dayOfWeek(),weather.datetime))
         self.tempratureLabel.attributedText = AttributedString.tempratureString(min: String(weather.minTemp), max: String(weather.maxTemp))
         self.weatherImage.image = UIImage(named: String(weather.weather.icon))
     }
