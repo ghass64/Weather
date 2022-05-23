@@ -23,13 +23,20 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = Constants.city
+        configureView()
         updateUIFromViewModel()
     }
     
     
     //MARK: - Helper methods
+    func configureView() {
+        self.title = Constants.city
+
+        //add pull to refresh mechanism to the table
+        addPullToRefresh()
+
+    }
+    
     func updateUIFromViewModel() {
         self.weatherViewModel = WeatherViewModel()
         self.weatherViewModel.bindWeatherViewModelToController = {
@@ -45,9 +52,25 @@ class HomeViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.tableView.dataSource = self.dataSource
-            self.tableView.reloadData()
-            IHProgressHUD.dismiss()
+            self.completeUpdatingUI()
         }
+    }
+    
+    private func addPullToRefresh() {
+        //using UIRefreshControl to tableview and connect it with method to update
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:#selector(self.handleRefresh), for: .valueChanged)
+    }
+    
+    //method to call after pull to referesh to update the list
+    @objc func handleRefresh() {
+        updateUIFromViewModel()
+    }
+    
+    func completeUpdatingUI() {
+        self.tableView.reloadData()
+        IHProgressHUD.dismiss()
+        self.tableView.refreshControl?.endRefreshing()
     }
 }
 
