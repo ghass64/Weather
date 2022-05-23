@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
     //MARK: - DataSource
     private var dataSource: WeatherTableViewDataSource<WeatherTableViewCell,WeatherForecast>!
     
+    //MARK: - Timer
+    var updateTimer: Timer?
+
     
     
     override func viewDidLoad() {
@@ -27,6 +30,16 @@ class HomeViewController: UIViewController {
         updateUIFromViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.updateUIFromViewModel), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        updateTimer?.invalidate()
+        completeUpdatingUI()
+    }
     
     //MARK: - Helper methods
     func configureView() {
@@ -37,7 +50,7 @@ class HomeViewController: UIViewController {
 
     }
     
-    func updateUIFromViewModel() {
+    @objc func updateUIFromViewModel() {
         self.weatherViewModel = WeatherViewModel()
         self.weatherViewModel.bindWeatherViewModelToController = {
             self.updateDataSource()
@@ -52,6 +65,7 @@ class HomeViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.tableView.dataSource = self.dataSource
+            self.tableView.reloadData()
             self.completeUpdatingUI()
         }
     }
@@ -68,7 +82,6 @@ class HomeViewController: UIViewController {
     }
     
     func completeUpdatingUI() {
-        self.tableView.reloadData()
         IHProgressHUD.dismiss()
         self.tableView.refreshControl?.endRefreshing()
     }
