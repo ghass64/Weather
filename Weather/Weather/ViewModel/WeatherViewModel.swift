@@ -9,8 +9,8 @@ import UIKit
 import IHProgressHUD
 
 class WeatherViewModel: NSObject {
-    private var apiService: APIService?
-    private(set) var weatherData: Weather? {
+    private var apiService: APIService!
+    private(set) var weatherData: Weather! {
         didSet {
             self.bindWeatherViewModelToController()
         }
