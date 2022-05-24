@@ -8,13 +8,15 @@
 import Foundation
 
 class APIService: NSObject {
-
+    
+    //MARK: - Variables
     private let sourceURL = URL(string: Constants.APIURL)!
     
+    //MARK: - Methods
     func apiToGetWeatherForecastData(unit: String, completion: @escaping (Weather?, String?) -> ()) {
         let apiString = String(format: "%@?city=%@&country=%@&days=%@&units=%@&key=%@",Constants.APIURL,Constants.city,Constants.countryCode,Constants.days,unit,Constants.apiKey)
         let sourceURL = URL(string: apiString)!
-
+        
         URLSession.shared.dataTask(with: sourceURL) { Data, response, error in
             if let data = Data {
                 do {

@@ -27,9 +27,9 @@ class DatabaseManager {
     // MARK: - Work With WeatherForcasts
     
     func add(forecast: [WeatherForecast]) {
-            try! realm.write {
-                realm.add(forecast)
-            }
+        try! realm.write {
+            realm.add(forecast)
+        }
         
     }
     

@@ -9,24 +9,28 @@ import UIKit
 import IHProgressHUD
 
 class WeatherViewModel: NSObject {
+    //MARK: - Variables
     private var apiService: APIService!
-    var onErrorHanlding: ((String) -> Void)?
-
     var selectedForecast: WeatherForecast!
-
+    var bindWeatherViewModelToController: (() -> ()) = {}
     private(set) var weatherData: Weather! {
         didSet {
             self.bindWeatherViewModelToController()
         }
     }
     
-    var bindWeatherViewModelToController: (() -> ()) = {}
     
+    //MARK: - Delegations
+    var onErrorHanlding: ((String) -> Void)?
+    
+    
+    //MARK: - Initializer
     override init() {
         super.init()
         self.apiService = APIService()
     }
     
+    //MARK: - Fetch Data
     func getWeatherData() {
         IHProgressHUD.show()
         if !Connectivity.isConnectedToInternet {
@@ -40,7 +44,6 @@ class WeatherViewModel: NSObject {
         } else {
             self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { (result,error)  in
                 if error != nil {
-                    //Show alert
                     self.onErrorHanlding?(error!)
                 } else {
                     self.weatherData = result
@@ -49,6 +52,7 @@ class WeatherViewModel: NSObject {
         }
     }
     
+    //MARK: - Communication Methods
     func selectForecast(atIndex: Int) {
         selectedForecast = weatherData.forecast[atIndex]
     }

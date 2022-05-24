@@ -19,7 +19,7 @@ class Weather: NSObject, Codable {
     let forecast: [WeatherForecast]
     let cityName, lon, timezone, lat: String
     let countryCode, stateCode: String
-
+    
     enum CodingKeys: String, CodingKey {
         case forecast = "data"
         case cityName = "city_name"
@@ -29,14 +29,14 @@ class Weather: NSObject, Codable {
     }
     
     init(forecast: [WeatherForecast], cityName: String, lon: String, timezone: String, lat: String, countryCode: String, stateCode: String) {
-            self.forecast = forecast
-            self.cityName = cityName
-            self.lon = lon
-            self.timezone = timezone
-            self.lat = lat
-            self.countryCode = countryCode
-            self.stateCode = stateCode
-        }
+        self.forecast = forecast
+        self.cityName = cityName
+        self.lon = lon
+        self.timezone = timezone
+        self.lat = lat
+        self.countryCode = countryCode
+        self.stateCode = stateCode
+    }
 }
 
 // MARK: - WeatherForecast
@@ -45,7 +45,7 @@ class WeatherForecast: Object, Codable {
     @Persisted var maxTemp: Double
     @Persisted var datetime: String
     @Persisted var minTemp: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case weather
         case maxTemp = "max_temp"
@@ -67,7 +67,7 @@ class WeatherClass: Object, Codable {
     @Persisted var icon: String
     @Persisted var code: Int
     @Persisted var weatherDescription: String
-
+    
     enum CodingKeys: String, CodingKey {
         case icon, code
         case weatherDescription = "description"
@@ -75,10 +75,10 @@ class WeatherClass: Object, Codable {
     
     convenience init(icon: String, code: Int, weatherDescription: String) {
         self.init()
-            self.icon = icon
-            self.code = code
-            self.weatherDescription = weatherDescription
-        }
+        self.icon = icon
+        self.code = code
+        self.weatherDescription = weatherDescription
+    }
 }
 
 
@@ -91,7 +91,7 @@ enum WeatherMeasurement:String {
 
 // MARK: - JSONNull
 class JSONNull: Codable, Hashable {
-
+    
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }
@@ -99,9 +99,9 @@ class JSONNull: Codable, Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(0)
     }
-
+    
     public init() {}
-
+    
     // MARK: - Encode/decode helpers
     
     public required init(from decoder: Decoder) throws {
@@ -110,7 +110,7 @@ class JSONNull: Codable, Hashable {
             throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
         }
     }
-
+    
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()

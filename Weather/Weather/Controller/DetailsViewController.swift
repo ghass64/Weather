@@ -8,18 +8,18 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
     //MARK: - Outlet
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var tempratureLabel: UILabel!
-
+    
     //MARK: - ViewModel
     private var weatherViewModel = WeatherViewModel()
-
     
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -36,15 +36,15 @@ class DetailsViewController: UIViewController {
         let highTemprature = String(format:"H:%.0f° %@",forecast.maxTemp, SettingManager.shared.getMeasurment())
         tempratureLabel.text =  highTemprature + lowTemprature
     }
-
+    
     func transfer(forecast: WeatherForecast) {
         weatherViewModel.receive(forecast)
     }
-
+    
     
     //MARK: - Actions
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.dismiss(animated: true)
     }
-
+    
 }

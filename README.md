@@ -19,7 +19,7 @@ This is a simple app which basically fetches weather data for 10 days from the g
 - [x] Settings view to change from Centigrade to Fahrenheit and vice versa
 - [x] Offline/Local storage (preferably Realm Framework)
 - [x] Presentable or Intuitive UI/UX
-- [] Multiple variants for different environments (development-staging-production)
+- [x] Multiple variants for different environments (development-staging-production)
 - [x] Update weather info frequently in the background
 
 

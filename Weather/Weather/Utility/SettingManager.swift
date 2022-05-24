@@ -8,9 +8,10 @@
 import Foundation
 import Reachability
 
+//MARK: - SettingManager
 class SettingManager {
     public static let shared = SettingManager()
-
+    
     func setMeasurment(measurment:String) {
         let prefs = UserDefaults.standard
         if measurment != "" {
@@ -48,7 +49,7 @@ class SettingManager {
         }
     }
 }
-
+//MARK: - Connectivity
 class Connectivity {
     class var isConnectedToInternet: Bool {
         let reachability = try! Reachability()

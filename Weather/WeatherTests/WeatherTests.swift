@@ -9,17 +9,17 @@ import XCTest
 @testable import Weather
 
 class WeatherTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         try super.tearDownWithError()
     }
-
+    
     func testFetchApiService() throws {
         // given
         let apiService = APIService()
@@ -55,7 +55,7 @@ class WeatherTests: XCTestCase {
         viewModel.getWeatherData()
         
         wait(for: [promise], timeout: 15)
-
+        
     }
     
     func testTableDataSource() {
@@ -74,12 +74,12 @@ class WeatherTests: XCTestCase {
         
         viewModel.getWeatherData()
         wait(for: [promise], timeout: 30)
-
+        
     }
     
     func testTransferDataWithViewModel() {
         let viewModel = WeatherViewModel()
-                
+        
         let promise = expectation(description: "Object transfered successfully")
         
         viewModel.onErrorHanlding = { error in
@@ -102,5 +102,5 @@ class WeatherTests: XCTestCase {
         wait(for: [promise], timeout: 15)
     }
     
-
+    
 }

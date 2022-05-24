@@ -8,7 +8,7 @@
 enum Constants {
     
     static let wSettingKeyMeasurment = "wSettingKeyMeasurment"
-
+    
     static let NotificationIdentifier = "com.ahoy.weather.localNotification"
     static let city = "Hannover"
     static let countryCode = "DE"

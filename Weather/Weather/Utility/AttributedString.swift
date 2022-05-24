@@ -13,7 +13,7 @@ class AttributedString : NSObject {
         
         let maximumDegree = String(format: "%@° %@",max, SettingManager.shared.getMeasurment())
         let temprature = String(format: "%@ | %@° %@", maximumDegree, min, SettingManager.shared.getMeasurment())
-
+        
         let maxRange = (temprature as NSString).range(of: maximumDegree)
         
         let attributedString = NSMutableAttributedString.init(string:temprature)
@@ -21,7 +21,7 @@ class AttributedString : NSObject {
             attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: maxRange)
             attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: maxRange)
         }
-         return attributedString
+        return attributedString
     }
     
     class func dateLiteString(fullDate: String) -> NSAttributedString {
@@ -31,14 +31,14 @@ class AttributedString : NSObject {
         if dateArr.count > 0 {
             dateString = dateArr[1]
         }
-
+        
         let range = (fullDate as NSString).range(of: dateString)
         
         let attributedString = NSMutableAttributedString.init(string:fullDate)
         if let font = UIFont(name: "AvenirNextCondensed-UltraLight", size: 10) {
             attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: range)
         }
-         return attributedString
+        return attributedString
     }
     
 }

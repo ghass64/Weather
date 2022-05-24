@@ -8,16 +8,21 @@
 import UIKit
 
 class WeatherTableViewDataSource<CELL: UITableViewCell, T> : NSObject, UITableViewDataSource {
+    //MARK: - Variables
     private var cellIdentifier: String!
     private var data: [T]!
+    
+    //MARK: - Delegations
     var configureCell: (CELL, T) -> () = {_,_ in}
-
+    
+    //MARK: - Initializer
     init(cellIdentifier: String, data: [T], configureCell: @escaping (CELL, T) -> ()) {
         self.cellIdentifier = cellIdentifier
         self.data = data
         self.configureCell = configureCell
     }
     
+    //MARK: - TableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -28,5 +33,5 @@ class WeatherTableViewDataSource<CELL: UITableViewCell, T> : NSObject, UITableVi
         self.configureCell(cell, weatherData)
         return cell
     }
-
+    
 }

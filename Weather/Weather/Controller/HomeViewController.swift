@@ -10,7 +10,7 @@ import IHProgressHUD
 
 class HomeViewController: UIViewController {
     
-    //MARK: -IBOUTLET
+    //MARK: -Outlets
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - ViewModel
@@ -21,9 +21,9 @@ class HomeViewController: UIViewController {
     
     //MARK: - Timer
     var updateTimer: Timer?
-
     
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -52,10 +52,10 @@ class HomeViewController: UIViewController {
         let settingBtn: UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(self.settingButtonClicked))
         settingBtn.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItems = [settingBtn]
-
+        
         //add pull to refresh mechanism to the table
         addPullToRefresh()
-
+        
     }
     
     @objc func updateUIFromViewModel() {
@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
         weatherViewModel.bindWeatherViewModelToController = {
             self.updateDataSource()
         }
-
+        
     }
     
     func updateDataSource() {
@@ -89,6 +89,12 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func completeUpdatingUI() {
+        IHProgressHUD.dismiss()
+        self.tableView.refreshControl?.endRefreshing()
+    }
+    
+    //MARK: - Refresh Control
     private func addPullToRefresh() {
         //using UIRefreshControl to tableview and connect it with method to update
         tableView.refreshControl = UIRefreshControl()
@@ -98,11 +104,6 @@ class HomeViewController: UIViewController {
     //method to call after pull to referesh to update the list
     @objc func handleRefresh() {
         updateUIFromViewModel()
-    }
-    
-    func completeUpdatingUI() {
-        IHProgressHUD.dismiss()
-        self.tableView.refreshControl?.endRefreshing()
     }
     
     //MARK: - Action
@@ -134,7 +135,7 @@ class HomeViewController: UIViewController {
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
