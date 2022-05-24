@@ -21,7 +21,6 @@
 		3F81A900283BB4A9007F3812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F81A8FE283BB4A9007F3812 /* LaunchScreen.storyboard */; };
 		3F81A90B283BB4A9007F3812 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A90A283BB4A9007F3812 /* WeatherTests.swift */; };
 		3F81A915283BB4A9007F3812 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A914283BB4A9007F3812 /* WeatherUITests.swift */; };
-		3F81A917283BB4A9007F3812 /* WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A916283BB4A9007F3812 /* WeatherUITestsLaunchTests.swift */; };
 		3F81A925283BC081007F3812 /* IHProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 3F81A924283BC081007F3812 /* IHProgressHUD */; };
 		3F81A932283BC86B007F3812 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A931283BC86B007F3812 /* Weather.swift */; };
 		3F81A934283BCABF007F3812 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A933283BCABF007F3812 /* APIService.swift */; };
@@ -67,7 +66,6 @@
 		3F81A90A283BB4A9007F3812 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		3F81A910283BB4A9007F3812 /* WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A914283BB4A9007F3812 /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
-		3F81A916283BB4A9007F3812 /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3F81A931283BC86B007F3812 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		3F81A933283BCABF007F3812 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		3F81A935283BCC3B007F3812 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				3F81A914283BB4A9007F3812 /* WeatherUITests.swift */,
-				3F81A916283BB4A9007F3812 /* WeatherUITestsLaunchTests.swift */,
 			);
 			path = WeatherUITests;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F81A915283BB4A9007F3812 /* WeatherUITests.swift in Sources */,
-				3F81A917283BB4A9007F3812 /* WeatherUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

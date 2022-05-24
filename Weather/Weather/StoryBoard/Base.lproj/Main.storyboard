@@ -66,6 +66,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="tableView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rrf-Dw-dXq"/>
                                 </connections>
@@ -152,6 +155,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="chevron.backward" catalog="system" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="backButton"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="closeButtonClicked:" destination="u9A-bK-GHk" eventType="touchUpInside" id="Xzd-1W-Qma"/>
                                 </connections>

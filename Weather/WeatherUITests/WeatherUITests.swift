@@ -28,14 +28,40 @@ class WeatherUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        
+        // Assert that we are displaying the tableview
+        let forecastTableView = app.tables["tableView"]
+        XCTAssertTrue(forecastTableView.exists, "weather forecast list exists")
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
+        // Wait for data to be fetched from server
+        sleep(5)
+        
+        // Get an array of cells
+        let tableCells = forecastTableView.cells
+        
+        if tableCells.count > 0 {
+            let count: Int = (tableCells.count - 1)
+            
+            let promise = expectation(description: "Wait for table cells")
+            
+            for i in stride(from: 0, to: count , by: 1) {
+                // Grab the first cell and verify that it exists and tap it
+                let tableCell = tableCells.element(boundBy: i)
+                XCTAssertTrue(tableCell.exists, "The \(i) cell is in place on the table")
+                tableCell.tap()
+                
+                // go back to home page
+                app.buttons["backButton"].tap()
+                if i == (count - 1) {
+                    promise.fulfill()
+                }
+                
             }
+            waitForExpectations(timeout: 20, handler: nil)
+            XCTAssertTrue(true, "Finished validating the table cells")
+            
+        } else {
+            XCTAssert(false, "Was not able to find any table cells")
         }
     }
 }
