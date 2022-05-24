@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "sun_icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sun_icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sun_icon@3x.png",
+      "filename" : "weatherDetailsBG@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
