@@ -59,17 +59,17 @@ class HomeViewController: UIViewController {
     }
     
     @objc func updateUIFromViewModel() {
-        self.weatherViewModel.getWeatherData()
+        weatherViewModel.getWeatherData()
     }
     
     func bindViewControllerWithViewModel() {
-        self.weatherViewModel.onErrorHanlding = { error in
+        weatherViewModel.onErrorHanlding = { error in
             DispatchQueue.main.async {
                 self.showAlertWith(message: error, title: "Info")
                 self.completeUpdatingUI()
             }
         }
-        self.weatherViewModel.bindWeatherViewModelToController = {
+        weatherViewModel.bindWeatherViewModelToController = {
             self.updateDataSource()
         }
 
