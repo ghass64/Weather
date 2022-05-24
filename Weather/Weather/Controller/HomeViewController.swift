@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     func configureView() {
         self.title = Constants.city
         let settingBtn: UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(self.settingButtonClicked))
-        settingBtn.tintColor = UIColor.systemBackground
+        settingBtn.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItems = [settingBtn]
 
         //add pull to refresh mechanism to the table

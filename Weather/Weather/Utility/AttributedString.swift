@@ -19,7 +19,7 @@ class AttributedString : NSObject {
         let attributedString = NSMutableAttributedString.init(string:temprature)
         if let font = UIFont(name: "AvenirNextCondensed-Bold", size: 20) {
             attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: maxRange)
-            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemBackground, range: maxRange)
+            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: maxRange)
         }
          return attributedString
     }
