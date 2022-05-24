@@ -1,6 +1,8 @@
 # Weather
 This repo holds the code for Ahoy test App
 
+![Weatherscreenshot](https://user-images.githubusercontent.com/1625797/170110917-7c3179cb-471e-45a5-a871-f953cca0415a.png)
+
 ## About App
 
 This is a simple app which basically fetches weather data for 10 days from the given API, and parses the JSON response into models which are `Codable` structs & ultimately displaying it in a tableview. Every cell is a weather information for a day which displays image for the weather, degree, date. On tapping any of the item, user can get into the detail screen.
