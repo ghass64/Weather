@@ -66,7 +66,6 @@ class WeatherTests: XCTestCase {
         
         viewModel.bindWeatherViewModelToController = {
             dataSource = WeatherTableViewDataSource(cellIdentifier: "WeatherTableViewCell", data: viewModel.weatherData.forecast, configureCell: { (cell, weather) in
-                // configure cell UI element
                 promise.fulfill()
             })
             XCTAssertNotNil(dataSource)
@@ -78,6 +77,30 @@ class WeatherTests: XCTestCase {
 
     }
     
+    func testTransferDataWithViewModel() {
+        let viewModel = WeatherViewModel()
+                
+        let promise = expectation(description: "Object transfered successfully")
+        
+        viewModel.onErrorHanlding = { error in
+            XCTFail(error)
+        }
+        viewModel.bindWeatherViewModelToController = {
+            viewModel.selectForecast(atIndex: 0)
+            let sentObject = viewModel.selectedForecast
+            
+            viewModel.receive(sentObject!)
+            
+            let recievedObject = viewModel.selectedForecast
+            
+            XCTAssertEqual(sentObject, recievedObject)
+            promise.fulfill()
+        }
+        
+        viewModel.getWeatherData()
+        
+        wait(for: [promise], timeout: 15)
+    }
     
 
 }
