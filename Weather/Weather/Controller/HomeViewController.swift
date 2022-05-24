@@ -133,11 +133,26 @@ class HomeViewController: UIViewController {
     }
     
     
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetailScreen" {
+            guard let dest = segue.destination as? DetailsViewController else {
+                return
+            }
+            dest.transfer(forecast: weatherViewModel.selectedForecast)
+        }
+    }
 }
 
 //MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        weatherViewModel.selectForecast(atIndex: indexPath.row)
+        self.performSegue(withIdentifier: "showDetailScreen", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -12,6 +12,8 @@ class WeatherViewModel: NSObject {
     private var apiService: APIService!
     var onErrorHanlding: ((String) -> Void)?
 
+    var selectedForecast: WeatherForecast!
+
     private(set) var weatherData: Weather! {
         didSet {
             self.bindWeatherViewModelToController()
@@ -47,6 +49,13 @@ class WeatherViewModel: NSObject {
         }
     }
     
+    func selectForecast(atIndex: Int) {
+        selectedForecast = weatherData.forecast[atIndex]
+    }
+    
+    func receive(_ forecast: WeatherForecast) {
+        selectedForecast = forecast
+    }
     
     
 }

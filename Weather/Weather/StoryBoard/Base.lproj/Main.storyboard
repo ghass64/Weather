@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ane-2K-GdU">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherTableViewCell" id="OuI-S9-DnZ" customClass="WeatherTableViewCell" customModule="Weather" customModuleProvider="target">
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="544.92753623188412" y="46.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="ckp-yn-5T7">
             <objects>
-                <viewController id="u9A-bK-GHk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="u9A-bK-GHk" customClass="DetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahE-nk-tuN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="448"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-CS-G5b">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="210.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dubai" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-E5-uzH">
                                                 <rect key="frame" x="154.5" y="0.0" width="105.5" height="68.5"/>
@@ -120,25 +120,14 @@
                                                     <constraint firstAttribute="height" constant="60" id="arv-gw-XK0"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjw-3U-Dwr">
-                                                <rect key="frame" x="159" y="128.5" width="96.5" height="82"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjw-3U-Dwr">
+                                                <rect key="frame" x="115" y="128.5" width="184.5" height="82"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-6J-PYK">
-                                        <rect key="frame" x="153" y="220.5" width="108" height="27.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H:25 C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-8B-ncP">
-                                                <rect key="frame" x="0.0" y="0.0" width="49" height="27.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L:13C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgb-hH-z5V">
-                                                <rect key="frame" x="59" y="0.0" width="49" height="27.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H:25 C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-8B-ncP">
+                                                <rect key="frame" x="182.5" y="210.5" width="49" height="27.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -151,8 +140,6 @@
                                     <constraint firstAttribute="trailing" secondItem="RdU-CS-G5b" secondAttribute="trailing" id="Dn4-y2-kus"/>
                                     <constraint firstItem="RdU-CS-G5b" firstAttribute="leading" secondItem="jgn-QS-mrE" secondAttribute="leading" id="TQ8-DQ-Qih"/>
                                     <constraint firstItem="RdU-CS-G5b" firstAttribute="top" secondItem="jgn-QS-mrE" secondAttribute="top" id="VpX-B0-osZ"/>
-                                    <constraint firstItem="Cjx-6J-PYK" firstAttribute="top" secondItem="RdU-CS-G5b" secondAttribute="bottom" constant="10" id="jJD-VX-Dh2"/>
-                                    <constraint firstItem="Cjx-6J-PYK" firstAttribute="centerX" secondItem="jgn-QS-mrE" secondAttribute="centerX" id="xGW-9C-Ki1"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-t2-yWx">
@@ -165,6 +152,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="chevron.backward" catalog="system" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="u9A-bK-GHk" eventType="touchUpInside" id="Xzd-1W-Qma"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IXn-BL-Wtu"/>
@@ -184,6 +174,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="v1F-El-pOE"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="Dga-E5-uzH" id="Kyo-Lp-xDp"/>
+                        <outlet property="dayLabel" destination="Rjw-3U-Dwr" id="F02-2P-x6L"/>
+                        <outlet property="tempratureLabel" destination="cTT-8B-ncP" id="jVI-IM-ovW"/>
+                        <outlet property="weatherImage" destination="bnf-ma-7UG" id="jmI-du-LLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JT-ua-Y9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

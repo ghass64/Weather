@@ -12,6 +12,7 @@
 		3F6B29E7283CE0BC000EC5E3 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B29E6283CE0BC000EC5E3 /* DataBaseManager.swift */; };
 		3F6B29EA283CE9ED000EC5E3 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6B29E9283CE9ED000EC5E3 /* Reachability */; };
 		3F6B29EC283CFF92000EC5E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B29EB283CFF92000EC5E3 /* NotificationManager.swift */; };
+		3F6B29EE283D2D6D000EC5E3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B29ED283D2D6D000EC5E3 /* DetailsViewController.swift */; };
 		3F81A8F4283BB4A8007F3812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F3283BB4A8007F3812 /* AppDelegate.swift */; };
 		3F81A8F6283BB4A8007F3812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F5283BB4A8007F3812 /* SceneDelegate.swift */; };
 		3F81A8F8283BB4A8007F3812 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F7283BB4A8007F3812 /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		3F6B29E6283CE0BC000EC5E3 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		3F6B29EB283CFF92000EC5E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3F6B29ED283D2D6D000EC5E3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		3F81A8F0283BB4A8007F3812 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A8F3283BB4A8007F3812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A8F5283BB4A8007F3812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				3F81A8F7283BB4A8007F3812 /* HomeViewController.swift */,
+				3F6B29ED283D2D6D000EC5E3 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				3F81A93A283C0A3E007F3812 /* String.swift in Sources */,
 				3F81A936283BCC3B007F3812 /* Constant.swift in Sources */,
 				3F6B29E7283CE0BC000EC5E3 /* DataBaseManager.swift in Sources */,
+				3F6B29EE283D2D6D000EC5E3 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
