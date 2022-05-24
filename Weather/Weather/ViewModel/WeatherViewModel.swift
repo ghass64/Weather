@@ -10,6 +10,8 @@ import IHProgressHUD
 
 class WeatherViewModel: NSObject {
     private var apiService: APIService!
+    var onErrorHanlding: ((String) -> Void)?
+    
     private(set) var weatherData: Weather! {
         didSet {
             self.bindWeatherViewModelToController()
@@ -26,8 +28,16 @@ class WeatherViewModel: NSObject {
     
     func getWeatherData() {
         IHProgressHUD.show()
-        self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { result in
-            self.weatherData = result
+        self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { (result,error)  in
+            if error != nil {
+                //Show alert
+                self.onErrorHanlding?(error!)
+            } else {
+                self.weatherData = result
+            }
         }
     }
+    
+    
+    
 }

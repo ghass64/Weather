@@ -55,6 +55,12 @@ class HomeViewController: UIViewController {
     
     @objc func updateUIFromViewModel() {
         self.weatherViewModel = WeatherViewModel()
+        self.weatherViewModel.onErrorHanlding = { error in
+            DispatchQueue.main.async {
+                self.showAlertWith(message: error, title: "Info")
+                self.completeUpdatingUI()
+            }
+        }
         self.weatherViewModel.bindWeatherViewModelToController = {
             self.updateDataSource()
         }
@@ -106,6 +112,16 @@ class HomeViewController: UIViewController {
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    //MARK: - AlertView Method
+    private func showAlertWith(message: String, title: String) {
+        let alertController = UIAlertController(title: title, message:
+                                                    message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
 }
 
