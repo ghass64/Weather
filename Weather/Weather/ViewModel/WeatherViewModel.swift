@@ -11,7 +11,7 @@ import IHProgressHUD
 class WeatherViewModel: NSObject {
     private var apiService: APIService!
     var onErrorHanlding: ((String) -> Void)?
-    
+
     private(set) var weatherData: Weather! {
         didSet {
             self.bindWeatherViewModelToController()
@@ -23,17 +23,26 @@ class WeatherViewModel: NSObject {
     override init() {
         super.init()
         self.apiService = APIService()
-        getWeatherData()
     }
     
     func getWeatherData() {
         IHProgressHUD.show()
-        self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { (result,error)  in
-            if error != nil {
-                //Show alert
-                self.onErrorHanlding?(error!)
+        if !Connectivity.isConnectedToInternet {
+            let arr = DatabaseManager.shared.fetchForecast()
+            if arr.isEmpty {
+                self.onErrorHanlding?("No Data Available")
             } else {
-                self.weatherData = result
+                let weatherObject = Weather(forecast: arr, cityName: "", lon: "", timezone: "", lat: "", countryCode: "", stateCode: "")
+                self.weatherData = weatherObject
+            }
+        } else {
+            self.apiService?.apiToGetWeatherForecastData(unit: SettingManager.shared.getAPIMeasurment()) { (result,error)  in
+                if error != nil {
+                    //Show alert
+                    self.onErrorHanlding?(error!)
+                } else {
+                    self.weatherData = result
+                }
             }
         }
     }

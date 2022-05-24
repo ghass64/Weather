@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6B29E3283CD1B4000EC5E3 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6B29E2283CD1B4000EC5E3 /* Realm */; };
+		3F6B29E5283CD1B4000EC5E3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6B29E4283CD1B4000EC5E3 /* RealmSwift */; };
+		3F6B29E7283CE0BC000EC5E3 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B29E6283CE0BC000EC5E3 /* DataBaseManager.swift */; };
+		3F6B29EA283CE9ED000EC5E3 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6B29E9283CE9ED000EC5E3 /* Reachability */; };
 		3F81A8F4283BB4A8007F3812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F3283BB4A8007F3812 /* AppDelegate.swift */; };
 		3F81A8F6283BB4A8007F3812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F5283BB4A8007F3812 /* SceneDelegate.swift */; };
 		3F81A8F8283BB4A8007F3812 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81A8F7283BB4A8007F3812 /* HomeViewController.swift */; };
@@ -46,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F6B29E6283CE0BC000EC5E3 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		3F81A8F0283BB4A8007F3812 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81A8F3283BB4A8007F3812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F81A8F5283BB4A8007F3812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6B29E5283CD1B4000EC5E3 /* RealmSwift in Frameworks */,
+				3F6B29EA283CE9ED000EC5E3 /* Reachability in Frameworks */,
+				3F6B29E3283CD1B4000EC5E3 /* Realm in Frameworks */,
 				3F81A925283BC081007F3812 /* IHProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +199,7 @@
 				3F81A935283BCC3B007F3812 /* Constant.swift */,
 				3F81A93B283C0AAC007F3812 /* AttributedString.swift */,
 				3F81A941283C3149007F3812 /* SettingManager.swift */,
+				3F6B29E6283CE0BC000EC5E3 /* DataBaseManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -262,6 +271,9 @@
 			name = Weather;
 			packageProductDependencies = (
 				3F81A924283BC081007F3812 /* IHProgressHUD */,
+				3F6B29E2283CD1B4000EC5E3 /* Realm */,
+				3F6B29E4283CD1B4000EC5E3 /* RealmSwift */,
+				3F6B29E9283CE9ED000EC5E3 /* Reachability */,
 			);
 			productName = Weather;
 			productReference = 3F81A8F0283BB4A8007F3812 /* Weather.app */;
@@ -337,6 +349,8 @@
 			mainGroup = 3F81A8E7283BB4A8007F3812;
 			packageReferences = (
 				3F81A923283BC081007F3812 /* XCRemoteSwiftPackageReference "IHProgressHUD" */,
+				3F6B29E1283CD1B4000EC5E3 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				3F6B29E8283CE9ED000EC5E3 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 3F81A8F1283BB4A8007F3812 /* Products */;
 			projectDirPath = "";
@@ -393,6 +407,7 @@
 				3F81A8F6283BB4A8007F3812 /* SceneDelegate.swift in Sources */,
 				3F81A93A283C0A3E007F3812 /* String.swift in Sources */,
 				3F81A936283BCC3B007F3812 /* Constant.swift in Sources */,
+				3F6B29E7283CE0BC000EC5E3 /* DataBaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +747,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3F6B29E1283CD1B4000EC5E3 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+		3F6B29E8283CE9ED000EC5E3 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		3F81A923283BC081007F3812 /* XCRemoteSwiftPackageReference "IHProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftify-Corp/IHProgressHUD.git";
@@ -743,6 +774,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3F6B29E2283CD1B4000EC5E3 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F6B29E1283CD1B4000EC5E3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		3F6B29E4283CD1B4000EC5E3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F6B29E1283CD1B4000EC5E3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		3F6B29E9283CE9ED000EC5E3 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F6B29E8283CE9ED000EC5E3 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
 		3F81A924283BC081007F3812 /* IHProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3F81A923283BC081007F3812 /* XCRemoteSwiftPackageReference "IHProgressHUD" */;

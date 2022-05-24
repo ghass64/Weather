@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - ViewModel
-    private var weatherViewModel: WeatherViewModel!
+    private var weatherViewModel = WeatherViewModel()
     
     //MARK: - DataSource
     private var dataSource: WeatherTableViewDataSource<WeatherTableViewCell,WeatherForecast>!
@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        bindViewControllerWithViewModel()
         updateUIFromViewModel()
     }
     
@@ -54,7 +55,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func updateUIFromViewModel() {
-        self.weatherViewModel = WeatherViewModel()
+        self.weatherViewModel.getWeatherData()
+    }
+    
+    func bindViewControllerWithViewModel() {
         self.weatherViewModel.onErrorHanlding = { error in
             DispatchQueue.main.async {
                 self.showAlertWith(message: error, title: "Info")
@@ -64,6 +68,7 @@ class HomeViewController: UIViewController {
         self.weatherViewModel.bindWeatherViewModelToController = {
             self.updateDataSource()
         }
+
     }
     
     func updateDataSource() {
@@ -73,6 +78,7 @@ class HomeViewController: UIViewController {
         })
         
         DispatchQueue.main.async {
+            DatabaseManager.shared.add(forecast: self.weatherViewModel.weatherData.forecast)
             self.tableView.dataSource = self.dataSource
             self.tableView.reloadData()
             self.completeUpdatingUI()

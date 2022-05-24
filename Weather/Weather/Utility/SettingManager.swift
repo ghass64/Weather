@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Reachability
 
 class SettingManager {
     public static let shared = SettingManager()
@@ -44,6 +45,17 @@ class SettingManager {
             }
         } else {
             return "C"
+        }
+    }
+}
+
+class Connectivity {
+    class var isConnectedToInternet: Bool {
+        let reachability = try! Reachability()
+        if reachability.connection == .unavailable {
+            return false
+        } else {
+            return true
         }
     }
 }
