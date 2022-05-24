@@ -33,6 +33,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // schedule local notification
+        NotificationManager.shared.scheduleNotification()
+        
+        // configure timer for background fetch data
         updateTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(HomeViewController.updateUIFromViewModel), userInfo: nil, repeats: true)
     }
     

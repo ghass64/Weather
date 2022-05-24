@@ -9,7 +9,7 @@ enum Constants {
     
     static let wSettingKeyMeasurment = "wSettingKeyMeasurment"
 
-    
+    static let NotificationIdentifier = "com.hawish.weather.localNotification"
     static let city = "Hannover"
     static let countryCode = "DE"
     static let apiKey = "9686aff607434c4f9c4aeb861bf68765"
